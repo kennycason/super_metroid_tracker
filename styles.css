@@ -64,7 +64,7 @@ h1 {
 }
 
 .stats-panel {
-    width: 135px;
+    width: 160px;  /* Decreased from 180px */
     background: var(--background-color);
     border-right: 1px solid var(--accent-color);
     padding: 6px;
@@ -87,7 +87,7 @@ h1 {
 }
 
 .stats-panel.jp {
-    width: 180px;
+    width: 205px;  /* Decreased from 225px */
 }
 
 .stats-header {
@@ -160,29 +160,22 @@ h1 {
 
 .item-marker {
     position: absolute;
-    pointer-events: all;
-    z-index: 11;
-    width: 32px;
+    width: 32px;  /* Keep marker size at 32x32 */
     height: 32px;
-    transform-origin: center;
     margin-left: -16px;
     margin-top: -16px;
+    pointer-events: all;
+    z-index: 11;
     cursor: pointer;
-    transition: filter 0.2s ease;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -webkit-crisp-edges;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
 }
 
 .item-marker .sprite {
-    width: 32px;
-    height: 32px;
-    transform-origin: center;
-    background-image: url('metroid_sprites.jpg');
+    width: 16px;  /* Original sprite size */
+    height: 16px;
+    transform: scale(2);  /* Scale up to 32x32 */
+    transform-origin: top left;
+    background-image: url('item_sprites.png');
     background-repeat: no-repeat;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -webkit-crisp-edges;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     filter: grayscale(100%) brightness(50%);
@@ -199,83 +192,83 @@ h1 {
 
 /* Item sprite positions */
 .sprite-energy {
-    background-position: -0px -0px;
+    background-position: -64px 0;  /* [4,0] */
 }
 
 .sprite-reserve {
-    background-position: -32px -0px;
+    background-position: -16px -96px;  /* [1,6] */
 }
 
 .sprite-missile {
-    background-position: -64px -0px;
+    background-position: -16px 0;  /* [1,0] */
 }
 
 .sprite-super_missile {
-    background-position: -96px -0px;
+    background-position: -16px -32px;  /* [1,2] */
 }
 
 .sprite-power_bomb {
-    background-position: -128px -0px;
+    background-position: -16px -64px;  /* [1,4] */
 }
 
 .sprite-morph_ball {
-    background-position: -0px -32px;
+    background-position: 0 0;  /* [0,0] */
 }
 
 .sprite-bombs {
-    background-position: -32px -32px;
+    background-position: -32px 0;  /* [2,0] */
 }
 
 .sprite-spring_ball {
-    background-position: -64px -32px;
+    background-position: 0 -48px;  /* [0,3] */
 }
 
 .sprite-hi_jump {
-    background-position: -96px -32px;
+    background-position: 0 -32px;  /* [0,2] */
 }
 
 .sprite-space_jump {
-    background-position: -128px -32px;
+    background-position: -32px -48px;  /* [2,3] */
 }
 
 .sprite-speed_booster {
-    background-position: -0px -64px;
+    background-position: -32px -32px;  /* [2,2] */
 }
 
 .sprite-grapple {
-    background-position: -32px -64px;
+    background-position: -64px -32px;  /* [4,2] */
 }
 
 .sprite-xray {
-    background-position: -64px -64px;
+    background-position: -96px -32px;  /* [6,2] */
 }
 
 .sprite-varia_suit {
-    background-position: -96px -64px;
+    background-position: 0 -80px;  /* [0,5] */
 }
 
 .sprite-gravity_suit {
-    background-position: -128px -64px;
+    background-position: -96px -32px;  /* [6,2] - xray position, but this seems wrong? */
 }
 
 .sprite-charge_beam {
-    background-position: -0px -96px;
+    background-position: -96px -48px;  /* [6,3] */
 }
 
 .sprite-ice_beam {
-    background-position: -32px -96px;
+    background-position: -64px -64px;  /* [4,4] */
 }
 
 .sprite-wave_beam {
-    background-position: -64px -96px;
+    background-position: -32px -64px;  /* [2,4] */
 }
 
 .sprite-spazer_beam {
-    background-position: -96px -96px;
+    background-position: 0 -64px;  /* [0,4] */
 }
 
 .sprite-plasma_beam {
-    background-position: -128px -96px;
+    background-position: -96px -64px;  /* [6,4] */
 }
 
 /* Boss sprites */
@@ -360,8 +353,10 @@ h1 {
     padding: 1px 4px;
     margin-bottom: 0;
     cursor: pointer;
-    font-size: 0.9em;  /* Back to 0.9em */
+    font-size: 0.9em;
     white-space: nowrap;
+    height: 32px;
+    min-height: 32px;
 }
 
 .item-entry:hover {
@@ -369,29 +364,35 @@ h1 {
 }
 
 .item-entry span {
-    overflow: hidden;
-    text-overflow: ellipsis;
+    margin-bottom: 2px;  /* Optional: slight adjustment to visually balance with icons */
 }
 
 /* Replace circle with sprite container */
 .item-entry .sprite-container {
-    width: 32px;  /* Increased to full sprite size */
-    height: 32px;  /* Increased to full sprite size */
+    width: 32px;
+    height: 32px;
     position: relative;
-    overflow: hidden;
+    flex-shrink: 0;
 }
 
 .item-entry .sprite {
-    width: 32px;
-    height: 32px;
-    transform: scale(1);  /* No scaling needed now */
-    transform-origin: 0 0;
+    width: 16px;
+    height: 16px;
+    transform: scale(2);
+    transform-origin: top left;
+    background-image: url('item_sprites.png');
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
     filter: grayscale(100%) brightness(50%);
     transition: filter 0.2s ease;
+    position: relative;
+    top: -8px;  /* Offset to account for the scaled size */
+    left: -8px; /* Offset to account for the scaled size */
 }
 
 .item-entry.collected .sprite {
-    filter: none;  /* Remove grayscale when collected */
+    filter: none;
 }
 
 /* Remove old circle styles */
@@ -401,22 +402,15 @@ h1 {
 
 /* Add sprite system */
 .sprite {
-    width: 32px;
-    height: 32px;
+    width: 16px;  /* Original sprite size */
+    height: 16px;  /* Original sprite size */
     display: inline-block;
-    background-image: url('metroid_sprites.jpg');
+    background-image: url('item_sprites.png');
     background-repeat: no-repeat;
     image-rendering: pixelated;
-    transform: scale(1);
-    transform-origin: left center;
-}
-
-.sprite-energy {
-    background-position: -92px -298px; 
-}
-
-.sprite-missile {
-    background-position: -122px -353px; 
+    image-rendering: crisp-edges;
+    transform: scale(2);  /* Scale up to 32x32 for display */
+    transform-origin: top left;  /* Important for positioning */
 }
 
 /* Add scrolling for item list if it gets too long */
@@ -1044,4 +1038,81 @@ h1 {
         height: 20px;
         font-size: 14px;
     }
+}
+
+/* Item sprites - 16x16 grid, no padding */
+.sprite-morph {
+    background-position: 0 0;  /* [0,0] */
+}
+
+.sprite-bomb {
+    background-position: -32px 0;  /* [2,0] */
+}
+
+.sprite-energy {
+    background-position: -64px 0;  /* [4,0] */
+}
+
+.sprite-missile {
+    background-position: -16px 0;  /* [1,0] */
+}
+
+.sprite-super {
+    background-position: -16px -32px;  /* [1,2] */
+}
+
+.sprite-power {
+    background-position: -16px -64px;  /* [1,4] */
+}
+
+.sprite-reserve {
+    background-position: -16px -96px;  /* [1,6] */
+}
+
+.sprite-hijump {
+    background-position: 0 -32px;  /* [0,2] */
+}
+
+.sprite-speed {
+    background-position: -32px -32px;  /* [2,2] */
+}
+
+.sprite-grapple {
+    background-position: -64px -32px;  /* [4,2] */
+}
+
+.sprite-xray {
+    background-position: -96px -32px;  /* [6,2] */
+}
+
+.sprite-spring {
+    background-position: 0 -48px;  /* [0,3] */
+}
+
+.sprite-space {
+    background-position: -32px -48px;  /* [2,3] */
+}
+
+.sprite-screw {
+    background-position: -64px -48px;  /* [4,3] */
+}
+
+.sprite-charge {
+    background-position: -96px -48px;  /* [6,3] */
+}
+
+.sprite-spazer {
+    background-position: 0 -64px;  /* [0,4] */
+}
+
+.sprite-wave {
+    background-position: -32px -64px;  /* [2,4] */
+}
+
+.sprite-ice {
+    background-position: -64px -64px;  /* [4,4] */
+}
+
+.sprite-plasma {
+    background-position: -96px -64px;  /* [6,4] */
 }
