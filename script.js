@@ -49,17 +49,177 @@ const itemShortCodes = {
 };
 
 // Audio tracks configuration
-const tracks = [
-    { title: "Title", jpTitle: "タイトル", url: "https://fi.zophar.net/soundfiles/nintendo-nes-nsf/metroid/1%20-%20Intro.mp3" },
-    { title: "Brinstar", jpTitle: "ブリンスタ", url: "https://fi.zophar.net/soundfiles/nintendo-nes-nsf/metroid/3%20-%20Brinstar.mp3" },
-    { title: "Norfair", jpTitle: "ノルフェア ", url: "https://fi.zophar.net/soundfiles/nintendo-nes-nsf/metroid/4%20-%20Norfair.mp3" },
-    { title: "Kraid", jpTitle: "クレイド", url: "https://fi.zophar.net/soundfiles/nintendo-nes-nsf/metroid/5%20-%20Kraid%27s%20Lair.mp3" },
-    { title: "Ridley", jpTitle: "リドリー", url: "https://fi.zophar.net/soundfiles/nintendo-nes-nsf/metroid/6%20-%20Ridley%27s%20Lair.mp3" },
-    { title: "Item Room", jpTitle: "アイテムルーム", url: "https://fi.zophar.net/soundfiles/nintendo-nes-nsf/metroid/7%20-%20Chozos.mp3" },
-    { title: "Tourian", jpTitle: "ツーリアン", url: "https://fi.zophar.net/soundfiles/nintendo-nes-nsf/metroid/9%20-%20Tourian.mp3" },
-    { title: "Zebetite", jpTitle: "ゼベタイト", url: "https://fi.zophar.net/soundfiles/nintendo-nes-nsf/metroid/10%20-%20Mother%20Brain.mp3" },
-    { title: "Escape", jpTitle: "脱出", url: "https://fi.zophar.net/soundfiles/nintendo-nes-nsf/metroid/11%20-%20Quick%20Escape.mp3" },
-    { title: "Ending", jpTitle: "エンディング", url: "https://fi.zophar.net/soundfiles/nintendo-nes-nsf/metroid/12%20-%20Mission%20Completed%20Successfully.mp3" }
+const songs = [
+    {
+        title: "Title Theme",
+        jpTitle: "タイトルテーマ",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm01.mp3"
+    },
+    {
+        title: "Prologue",
+        jpTitle: "プロローグ",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm02.mp3"
+    },
+    {
+        title: "Approaching the Space Colony",
+        jpTitle: "宇宙コロニーに接近",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm03.mp3"
+    },
+    {
+        title: "Deserted Ceres Space Colony",
+        jpTitle: "セレス宇宙コロニーの廃墟",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm04.mp3"
+    },
+    {
+        title: "Ridley / Draygon Boss Theme",
+        jpTitle: "リドリー/ドレイゴンのテーマ",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm05.mp3"
+    },
+    {
+        title: "Escape from the Space Colony",
+        jpTitle: "宇宙コロニーからの脱出",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm06.mp3"
+    },
+    {
+        title: "Approaching Planet Zebes",
+        jpTitle: "惑星ゼーベスに接近",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm07.mp3"
+    },
+    {
+        title: "Samus Intro Fanfare",
+        jpTitle: "サムスのファンファーレ",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm08.mp3"
+    },
+    {
+        title: "Crateria - Zebes Planetfall (Exterior)",
+        jpTitle: "クラテリア（地上） - ゼーベス着陸",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm09.mp3"
+    },
+    {
+        title: "Crateria - Zebes Planetfall (Interior)",
+        jpTitle: "クラテリア（地下） - ゼーベス内部",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm10.mp3"
+    },
+    {
+        title: "Crateria - The Space Pirates Emerge",
+        jpTitle: "クラテリア - スペースパイレーツ出現",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm11.mp3"
+    },
+    {
+        title: "Chozo Statue Awakens",
+        jpTitle: "目覚めるチョウゾー像",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm12.mp3"
+    },
+    {
+        title: "Item Room Ambience",
+        jpTitle: "アイテムルームの雰囲気",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm13.mp3"
+    },
+    {
+        title: "Item Acquisition Fanfare",
+        jpTitle: "アイテム獲得のファンファーレ",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm14.mp3"
+    },
+    {
+        title: "Brinstar - The Jungle Floor",
+        jpTitle: "ブリンスタ（緑のジャングルエリア）",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm15.mp3"
+    },
+    {
+        title: "Brinstar - Underground Depths",
+        jpTitle: "ブリンスタ（地下深部）",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm16.mp3"
+    },
+    {
+        title: "Spore Spawn / Botwoon Boss Theme",
+        jpTitle: "スポアスポーン/ボツゥーンのテーマ",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm17.mp3"
+    },
+    {
+        title: "Hostile Incoming",
+        jpTitle: "敵接近",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm18.mp3"
+    },
+    {
+        title: "Kraid / Crocomire / Phantoon Boss Theme",
+        jpTitle: "クレイド/クロコマイア/ファントゥーンのテーマ",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm19.mp3"
+    },
+    {
+        title: "Norfair - The Fires of Zebes",
+        jpTitle: "ノルフェア - ゼーベスの炎",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm20.mp3"
+    },
+    {
+        title: "Crateria - Main Theme",
+        jpTitle: "クラテリア - メインテーマ",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm21.mp3"
+    },
+    {
+        title: "Wrecked Ship - Lost Vessel (Power Down)",
+        jpTitle: "難破船 - 失われた船（電源オフ）",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm22.mp3"
+    },
+    {
+        title: "Wrecked Ship - Lost Vessel (Power On)",
+        jpTitle: "難破船 - 失われた船（電源オン）",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm23.mp3"
+    },
+    {
+        title: "Maridia - Sandy Desert",
+        jpTitle: "マリディア - 砂の砂漠",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm24.mp3"
+    },
+    {
+        title: "Maridia - Swampy Caverns",
+        jpTitle: "マリディア - 沼地の洞窟",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm25.mp3"
+    },
+    {
+        title: "Norfair - Ridley's Hideout",
+        jpTitle: "ノルフェア - リドリーの隠れ家",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm26.mp3"
+    },
+    {
+        title: "Failure",
+        jpTitle: "失敗",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm27.mp3"
+    },
+    {
+        title: "Ambient Silence",
+        jpTitle: "静寂",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm28.mp3"
+    },
+    {
+        title: "Space Pirate Statue Chamber",
+        jpTitle: "スペースパイレーツの像の部屋",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm29.mp3"
+    },
+    {
+        title: "Tourian - The Rebuilt Headquarters",
+        jpTitle: "ツーリアン - 再建された本部",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm30.mp3"
+    },
+    {
+        title: "Mother Brain - Final Battle",
+        jpTitle: "マザーブレイン - 最終決戦",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm31.mp3"
+    },
+    {
+        title: "Evacuate Immediately!",
+        jpTitle: "直ちに避難せよ！",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm32.mp3"
+    },
+    {
+        title: "Planet Zebes Explodes",
+        jpTitle: "惑星ゼーベス爆発",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm33.mp3"
+    },
+    {
+        title: "Staff Credits / Finale",
+        jpTitle: "スタッフロール/フィナーレ",
+        url: "https://metroid.retropixel.net/games/metroid3/music/sm34.mp3"
+    }
 ];
 
 // Group types for section ordering
@@ -611,7 +771,7 @@ function createItemEntry(id, item) {
 
 function updateTrackDisplay() {
     const $title = $('#trackTitle');
-    const title = currentLanguage === 'en' ? tracks[currentTrack].title : tracks[currentTrack].jpTitle;
+    const title = currentLanguage === 'en' ? songs[currentTrack].title : songs[currentTrack].title;
     $title.text(title);
 
     // Remove any existing animation
@@ -634,8 +794,8 @@ function togglePlay() {
     console.log('Current audio source:', audio.src);
 
     if (!audio.src) {
-        console.log('Setting initial audio source to track:', tracks[currentTrack].title);
-        audio.src = tracks[currentTrack].url;
+        console.log('Setting initial audio source to track:', songs[currentTrack].title);
+        audio.src = songs[currentTrack].url;
         updateTrackDisplay();
     }
 
@@ -668,27 +828,27 @@ function togglePlay() {
 }
 
 function prevTrack() {
-    currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+    currentTrack = (currentTrack - 1 + songs.length) % songs.length;
     if (isPlaying) {
-        audio.src = tracks[currentTrack].url;
+        audio.src = songs[currentTrack].url;
         audio.play().catch(err => {
             console.error('Failed to play audio:', err);
         });
     } else {
-        audio.src = tracks[currentTrack].url;
+        audio.src = songs[currentTrack].url;
     }
     updateTrackDisplay();
 }
 
 function nextTrack() {
-    currentTrack = (currentTrack + 1) % tracks.length;
+    currentTrack = (currentTrack + 1) % songs.length;
     if (isPlaying) {
-        audio.src = tracks[currentTrack].url;
+        audio.src = songs[currentTrack].url;
         audio.play().catch(err => {
             console.error('Failed to play audio:', err);
         });
     } else {
-        audio.src = tracks[currentTrack].url;
+        audio.src = songs[currentTrack].url;
     }
     updateTrackDisplay();
 }
@@ -1052,7 +1212,7 @@ $(document).ready(() => {
     audio.volume = 0;  // Start muted
 
     // Set initial track
-    audio.src = tracks[currentTrack].url;
+    audio.src = songs[currentTrack].url;
     updateTrackDisplay();
 
     // Load state from URL if present
