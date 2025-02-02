@@ -201,10 +201,10 @@ function updateCounters() {
         }
     });
 
-    $('#energy-count').text(energyCount);
-    $('#missile-count').text(missileCount);
-    $('#super-missile-count').text(superMissileCount);
-    $('#power-bomb-count').text(powerBombCount);
+    $('#energy-tank-count').text(energyCount);
+    $('#missile-count').text(missileCount * 5);
+    $('#super-missile-count').text(superMissileCount * 5);
+    $('#power-bomb-count').text(powerBombCount * 5);
     $('#reserve-count').text(reserveCount);
 }
 

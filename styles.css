@@ -95,18 +95,35 @@ h1 {
     padding-bottom: 6px;
     border-bottom: 1px solid var(--accent-color);
     display: flex;
-    flex-direction: column;  
-    gap: 8px;  
+    flex-direction: column;
+    gap: 4px;  /* Add consistent spacing between counters */
 }
 
 .total-counter {
     display: flex;
-    align-items: flex-end;
-    gap: 4px;
+    align-items: center;
+    height: 32px;
+    padding: 1px 4px;
+    gap: 12px;  /* Increased gap to prevent overlap */
 }
 
 .total-counter .sprite {
-    margin-bottom: 2px;  
+    width: 16px;
+    height: 16px;
+    transform: scale(2);
+    transform-origin: top left;
+    flex-shrink: 0;  /* Prevent sprite from shrinking */
+}
+
+.total-counter span {
+    padding-left: 3px;
+    display: flex;
+    align-items: center;  /* Vertically center the text */
+    height: 100%;  /* Take full height of container */
+}
+
+.total-counter .denominator {
+    padding-left: 1px;  /* Smaller padding between number and slash */
 }
 
 .item-counter {
@@ -200,15 +217,15 @@ h1 {
 }
 
 .sprite-missile {
-    background-position: -16px 0;  /* [1,0] */
+    background-position: 0 -16px;  /* [0,1] */
 }
 
 .sprite-super_missile {
-    background-position: -16px -32px;  /* [1,2] */
+    background-position: -32px -16px;  /* [2,1] */
 }
 
 .sprite-power_bomb {
-    background-position: -16px -64px;  /* [1,4] */
+    background-position: -64px -16px;  /* [4,1] */
 }
 
 .sprite-morph_ball {
@@ -364,7 +381,8 @@ h1 {
 }
 
 .item-entry span {
-    margin-bottom: 2px;  /* Optional: slight adjustment to visually balance with icons */
+    margin-bottom: 2px;  
+    padding-left: 3px;
 }
 
 /* Replace circle with sprite container */
@@ -1054,7 +1072,7 @@ h1 {
 }
 
 .sprite-missile {
-    background-position: -16px 0;  /* [1,0] */
+    background-position: 0 -16px;  /* [0,1] */
 }
 
 .sprite-super {
@@ -1066,7 +1084,7 @@ h1 {
 }
 
 .sprite-reserve {
-    background-position: -16px -96px;  /* [1,6] */
+    background-position: -96px -16px;  /* [6,1] */
 }
 
 .sprite-hijump {
